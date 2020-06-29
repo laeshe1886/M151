@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ch.gibz.m151.demo.api.Models;
 using ch.gibz.m151.demo.api.DTO;
+using ch.gibz.m151.demo.data;
+using ch.gibz.m151.demo.data.Model;
 
 namespace ch.gibz.m151.demo.api.Controllers
 {
@@ -15,9 +17,9 @@ namespace ch.gibz.m151.demo.api.Controllers
     [ApiController]
     public class TodoItemsController : ControllerBase
     {
-        private readonly TodoContext _context;
+        private readonly Infa2018aContext _context;
 
-        public TodoItemsController(TodoContext context)
+        public TodoItemsController(Infa2018aContext context)
         {
             _context = context;
         }

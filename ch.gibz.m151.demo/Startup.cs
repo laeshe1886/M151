@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using ch.gibz.m151.demo.api.Helpers;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using ch.gibz.m151.demo.data;
 
 namespace ch.gibz.m151.demo
 {
@@ -35,9 +36,11 @@ namespace ch.gibz.m151.demo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Infa2018aContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("Infa2018aContext")));
             services.AddCors();
-            services.AddDbContext<TodoContext>(opt =>
-               opt.UseInMemoryDatabase("TodoList"));
+            //services.AddDbContext<TodoContext>(opt =>
+               //opt.UseInMemoryDatabase("TodoList"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

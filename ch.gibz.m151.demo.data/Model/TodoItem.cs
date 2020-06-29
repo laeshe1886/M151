@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ch.gibz.m151.demo.api.Models
+namespace ch.gibz.m151.demo.data.Model
 {
     public class TodoItem
     {
